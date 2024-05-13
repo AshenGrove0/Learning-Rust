@@ -18,7 +18,7 @@ fn main() {
             .read_line(&mut guess)
             .expect("Failed to read line");
         guess_count += 1;
-        let guess: u32 = match guess.trim().parse() {
+        let guess: u32 = match guess.trim().parse() { // Strips and casts to u32 from str
             Ok(num) => num,
             Err(_) => continue,
         };
