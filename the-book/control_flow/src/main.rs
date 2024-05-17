@@ -1,10 +1,28 @@
 use std::io;
 
 fn main() {
-    /*Convert temperatures between Fahrenheit and Celsius.
+    /*
 Generate the nth Fibonacci number.
 Print the lyrics to the Christmas carol “The Twelve Days of Christmas,” taking advantage of the repetition in the song.*/
-//°C = (°F - 32) × 5/9
+    fibonacci(12);
+    convert();
+    //practice();
+        
+}
+
+fn fibonacci(n: u32){
+    let mut start = 1;
+    let mut second = 1;
+    for x in 1..n {
+        start += second;
+        if x != n {
+            continue
+        }
+        println!("{x}");
+    }
+}
+
+fn convert() {
     let mut celcius = String::new();
     io::stdin()
         .read_line(&mut celcius)
@@ -13,8 +31,10 @@ Print the lyrics to the Christmas carol “The Twelve Days of Christmas,” taki
     let celcius: i32 = celcius.trim().parse().expect("Failed to parse input");
     let f = (celcius * 9 / 5) + 32;  
     println!("{celcius} celcius = {f} farenheit");
+}
 /*
-    let x
+fn practice() {
+    let x = 4;
     if x > 5 {
         println!("x is greater than 5");
     } else if x < 3 {
@@ -67,6 +87,6 @@ Print the lyrics to the Christmas carol “The Twelve Days of Christmas,” taki
         count += 1;
     }
     println!("End count = {count}");
-    */
-        
+
 }
+*/
