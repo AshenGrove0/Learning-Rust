@@ -1,5 +1,20 @@
+use std::io;
+
 fn main() {
-    let x = 3;
+    /*Convert temperatures between Fahrenheit and Celsius.
+Generate the nth Fibonacci number.
+Print the lyrics to the Christmas carol “The Twelve Days of Christmas,” taking advantage of the repetition in the song.*/
+//°C = (°F - 32) × 5/9
+    let mut celcius = String::new();
+    io::stdin()
+        .read_line(&mut celcius)
+        .expect("Failed to read line");
+    // takes an input and converts it into farenheit
+    let celcius: i32 = celcius.trim().parse().expect("Failed to parse input");
+    let f = (celcius * 9 / 5) + 32;  
+    println!("{celcius} celcius = {f} farenheit");
+/*
+    let x
     if x > 5 {
         println!("x is greater than 5");
     } else if x < 3 {
@@ -8,9 +23,9 @@ fn main() {
         println!("x is between 3 and 5");
     }
     let y = if x == 4 { 12 } else { 13 };
-    /*loop { // infinite
+    loop { // infinite
         println!("U S A")
-    }*/
+    }
     let mut counter = 0;
     let result = loop {
         counter += 1;
@@ -52,5 +67,6 @@ fn main() {
         count += 1;
     }
     println!("End count = {count}");
+    */
         
 }
